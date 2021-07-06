@@ -1,0 +1,55 @@
+<% if @post.present? %>
+
+ 
+
+
+  <div class="show-header">
+    <div class="show-inner-header">
+      <h1 class="show-title">
+        主婦の掲示板
+      </h1>
+    </div>
+  </div>
+
+  <div class="show">
+
+    <div class="show-inner">
+      <div class="show-inner-title">
+        <h1><%= @post.text %></h1>
+      </div>
+    
+      
+
+
+    </div>
+
+    
+    <div class="show-sub">
+      <div class="show-new-post">
+          <p>悩み相談や雑談など何でもOK！</p>
+          <div class="show-post-sub">
+            <%= link_to "New Post", new_post_path, class:"show-post"%>
+          </div>
+      </div>
+
+
+      <% if user_signed_in? && current_user.id == @post.user_id %>
+        <div class="show-edit-delete">
+          <ul>
+            <li class="show-post-sub-edit"><%= link_to "編集", edit_post_path(@post.id), class:"show-post-edit"%></li>
+            <li class="show-post-sub-delete"><%= link_to "削除", post_path(@post.id), method: :delete, class:"show-post-delete"%></li>
+          </ul>
+        </div>
+      <% end %>
+
+
+
+    </div>
+    
+  </div>
+<% end %>
+
+
+
+
+
