@@ -1,0 +1,39 @@
+
+<div class="header">
+  <div class="inner-header">
+    <h1 class="title">
+     掲示板
+    </h1>
+    <li class='new-post'>
+      <%= link_to "New Post", new_post_path, class:"post-btn"%>
+    </li>
+    <li class='new-post'>
+      <%= link_to "新規登録", new_user_registration_path, class:"post-btn"%>
+    </li>
+  </div>
+</div>
+
+<div class="message">
+
+<div class="message-wrap">
+
+  
+
+
+    <% @posts.each do |post|%>
+      <div class="post">
+        <%= link_to post_path(post.id) do %>
+          <div class="post-date">
+            投稿日時：<%= post.created_at %>
+          </div>
+          <div class="post-content">
+            <%= post.text %>
+          </div>
+        <% end %>
+      </div>
+    <%end%>
+  </div>
+</div>
+
+<%#= render "shared/footer" %>
+

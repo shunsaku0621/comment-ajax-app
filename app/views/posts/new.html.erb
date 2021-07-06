@@ -1,0 +1,40 @@
+
+  <div class='form-header'>
+    <h1 class="form-header-text">New Post</h1>
+  </div>
+
+<%= form_with model: @post, url: posts_path, local: true do |f| %>
+
+
+  <div class='new-message-form'>
+
+
+    
+    
+    <div class="form-group">
+      <%= f.label :text,  "テキスト(※必須)" %>
+      <%= f.text_area :text, class:"new-input-message" %>
+    </div>
+
+    
+
+    
+    
+
+
+
+
+  </div>
+
+
+  <div class="cook-send">
+    <%= f.submit "Send", class:"register-red-btn" %>
+  </div>
+<% end %>
+
+
+
+
+
+
+
