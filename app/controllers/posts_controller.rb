@@ -23,6 +23,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
+    gon.comments = @comments
   end
 
   def destroy
