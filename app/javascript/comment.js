@@ -13,15 +13,14 @@
 
 // window.addEventListener('load', post);
 
-function post (){
+function pos (){
   const submit = document.getElementById("post-comment-submit");
   submit.addEventListener("click", (e)=>{
     
-    window.alert(`hello,${gon.comment.id}!`);  
-    debugger;
+    window.alert(`hello,${gon.comments.post.id}!`); 
     // console.log(gon.comment);
   });
 };
 
-window.addEventListener('load', post);
+window.addEventListener('load', pos);
 
